@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form By ASAD</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background-image: url(images/background.jpg);
+                background-size: cover;
+            }
+            .signup-form{
+                border: 1px solid;
+                width: 300px;
+                box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+                background: white;
+                padding: 20px;
+                margin: 10% auto ;
+                text-align: center;
+            }
+            .signup-form h1{
+                color: #1c8adb;
+                
+            }
+            .inputBox{
+                margin: 10px 0;
+                border-radius: 20px;
+                padding: 10px;
+                width: 90%;
+                border: 1px solid #999;
+                outline: none;
+            }
+            button{
+                color: white;
+                width: 100%;
+                padding: 10px;
+                border-radius: 20px;
+                font-size: 15px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                margin: 10px 0;
+            }
+            .signbtn{
+                background-color: #1c8adb;
+            }
+            .tbtn{
+                background-color: #21afde;
+            }
+            a{
+                text-decoration: none;
+            }
+            hr{
+                margin-top: 20px;
+                width: 80%;
+            }
+            .or{
+                background: white;
+                width: 30px;
+                margin: -19px auto 0;
+            }
+            img{
+                width: 70px;
+                margin-top: -65px;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="signup-form">
+        <img src="images/user.png" alt="">
+        <h1>SignUp Now</h1>
+
+
+        <form action="">
+            <input type="email" class="inputBox" placeholder="Your Email">
+            <input type="password"  class="inputBox" placeholder="password">
+
+            <p><span><input type="checkbox"></span>I agree to the Terms and Conditions</p>
+
+            <button type="button" class="signbtn">SignUp <i class="fa fa-user-plus" aria-hidden="true"></i></button>
+
+            <hr>
+
+            <p class="or">OR</p>
+
+            <button type="button" class="tbtn"> Login With Twitter  <i class="fa fa-twitter" aria-hidden="true"></i></button>
+
+            <p>Do you have an account ? <a href="#"> Sign In</a></p>
+        </form>
+      </div> 
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxkgWotCMyvIKoT9aGtPCndZdHtHrq8i972t9CKAVjO6xC7T0I/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    </body>
+</html>
